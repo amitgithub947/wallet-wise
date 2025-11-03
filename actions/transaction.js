@@ -10,7 +10,7 @@ import { request } from "@arcjet/next";
 //const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
 
 const serializeAmount = (obj) => ({
   ...obj,
@@ -233,7 +233,7 @@ export async function getUserTransactions(query = {}) {
 // Scan Receipt
 export async function scanReceipt(file) {
   try {
-     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // ✅ same name, but use `v1` endpoint
+     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" }); // ✅ same name, but use `v1` endpoint
 
 
     // Convert File to ArrayBuffer
